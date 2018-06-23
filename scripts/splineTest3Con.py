@@ -94,3 +94,6 @@ def build():
         cmds.hyperShade(assign=shader)
     cmds.select(clear=True)
     cmds.displaySmoothness(cube, polygonObject=3)
+    cmds.connectAttr('{}.worldInverseMatrix[0]'.format(skel_grp), '{}.parentInverseMatrix'.format(ik_node))
+
+build()

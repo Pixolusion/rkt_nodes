@@ -82,9 +82,7 @@ def build():
     for f in xrange(cmds.polyEvaluate(cube, f=True)):
         face = '{}.f[{}]'.format(cube, f)
         normal = [float(x) for x in cmds.polyInfo(face, fn=True)[0].split(':')[-1][1:-2].split(' ')]
-        print f, normal
         shader = xshader
-        print normal
         if normal[1]:
             shader = yshader
         elif normal[2]:
